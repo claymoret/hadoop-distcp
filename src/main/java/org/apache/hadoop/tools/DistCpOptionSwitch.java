@@ -185,8 +185,10 @@ public enum DistCpOptionSwitch {
    */
   FILTERS(DistCpConstants.CONF_LABEL_FILTERS_FILE,
       new Option("filters", true, "The path to a file containing a list of"
-          + " strings for paths to be excluded from the copy."));
+          + " strings for paths to be excluded from the copy.")),
 
+  SOURCE_ROOT_PATH(DistCpConstants.CONF_LABEL_SOURCE_ROOT_PATH,
+                   new Option("sourcerootpath", true, "The root path of source"));
 
   public static final String PRESERVE_STATUS_DEFAULT = "-prbugpct";
   private final String confLabel;

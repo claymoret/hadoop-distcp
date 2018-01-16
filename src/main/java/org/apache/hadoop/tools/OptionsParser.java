@@ -88,6 +88,13 @@ public class OptionsParser {
 
     DistCpOptions option = parseSourceAndTargetPaths(command);
 
+    if (command.hasOption(DistCpOptionSwitch.SOURCE_ROOT_PATH.getSwitch())) {
+      String rootPath = getVal(command, DistCpOptionSwitch.SOURCE_ROOT_PATH.getSwitch());
+      if (rootPath != null && !rootPath.isEmpty()) {
+        option.setSourceRootPath(new Path(rootPath));
+      }
+    }
+
     //Process all the other option switches and set options appropriately
     if (command.hasOption(DistCpOptionSwitch.IGNORE_FAILURES.getSwitch())) {
       option.setIgnoreFailures(true);

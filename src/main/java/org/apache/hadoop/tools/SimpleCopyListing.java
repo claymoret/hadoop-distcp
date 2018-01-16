@@ -357,6 +357,16 @@ public class SimpleCopyListing extends CopyListing {
     boolean solitaryFile = options.getSourcePaths().size() == 1
                                                 && !sourceStatus.isDirectory();
 
+    Path optionSourceRootPath = options.getSourceRootPath();
+    if (optionSourceRootPath != null && optionSourceRootPath.isAbsolute()) {
+      String filePath = sourceStatus.getPath().toString();
+      String optionPath = optionSourceRootPath.toString();
+      int i = filePath.indexOf(optionPath);
+      if (i > 0) {
+        return new Path(filePath.substring(0, i + optionPath.length()));
+      }
+    }
+
     if (solitaryFile) {
       if (targetFS.isFile(target) || !targetPathExists) {
         return sourceStatus.getPath();

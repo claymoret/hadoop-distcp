@@ -63,6 +63,7 @@ public class DistCpOptions {
 
   private Path sourceFileListing;
   private List<Path> sourcePaths;
+  private Path sourceRootPath;
 
   private String fromSnapshot;
   private String toSnapshot;
@@ -142,6 +143,7 @@ public class DistCpOptions {
       this.logPath = that.getLogPath();
       this.sourceFileListing = that.getSourceFileListing();
       this.sourcePaths = that.getSourcePaths();
+      this.sourceRootPath = that.getSourceRootPath();
       this.targetPath = that.getTargetPath();
       this.targetPathExists = that.getTargetPathExists();
       this.filtersFile = that.getFiltersFile();
@@ -530,6 +532,9 @@ public class DistCpOptions {
     assert sourcePaths != null && sourcePaths.size() != 0;
     this.sourcePaths = sourcePaths;
   }
+
+  public Path getSourceRootPath() { return sourceRootPath; }
+  public void setSourceRootPath(Path rootPath) { this.sourceRootPath = rootPath; }
 
   /**
    * Getter for the targetPath.
