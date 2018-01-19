@@ -674,6 +674,7 @@ public class DistCpOptions {
         ", copyStrategy='" + copyStrategy + '\'' +
         ", sourceFileListing=" + sourceFileListing +
         ", sourcePaths=" + sourcePaths +
+        ", sourceRootPath=" + sourceRootPath +
         ", targetPath=" + targetPath +
         ", targetPathExists=" + targetPathExists +
         ", preserveRawXattrs=" + preserveRawXattrs +

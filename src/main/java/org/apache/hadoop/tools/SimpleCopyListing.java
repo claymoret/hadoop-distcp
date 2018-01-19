@@ -362,7 +362,7 @@ public class SimpleCopyListing extends CopyListing {
       String filePath = sourceStatus.getPath().toString();
       String optionPath = optionSourceRootPath.toString();
       int i = filePath.indexOf(optionPath);
-      if (i > 0) {
+      if (i >= 0) {
         return new Path(filePath.substring(0, i + optionPath.length()));
       }
     }
