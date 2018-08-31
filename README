@@ -5,3 +5,5 @@ each of which will copy a partition of the files specified in the source list.
 
 Version 0.1 (2010/08/02 sriksun)
  - Initial Version
+
+hadoop distcp -sourcerootpath /path_to_strip hdfs://10.10.1.1/path_to_strip/view/2*/180115 /tmp
